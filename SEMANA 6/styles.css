@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(230, 189, 226);
+    padding: 30px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #080808;
+    text-align: center;
+    margin-bottom: 25px;
+
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+form {
+    max-width: 400px;
+    margin: auto;
+    background: rgb(231, 189, 226);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input.valido {
+    border: 2px solid #2ecc71;
+}
+
+input.invalido {
+    border: 2px solid #e74c3c;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 12px;
+}
+
+.botones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+#enviar {
+    background-color: #9ac7e6;
+    color: rgb(5, 5, 5);
+}
+
+button[type="reset"] {
+    background-color: #a8ebf0;
+    color: rgb(0, 0, 0);
+}
+input {
+    border: 1px solid #c39bd3;
+}
+
+input:focus {
+    outline: none;
+    border-color: #9b59b6;
+}
