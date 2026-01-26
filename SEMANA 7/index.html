@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florería - Catálogo Dinámico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            /* IMAGEN DE FONDO */
+            background-image: url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2080&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Mantiene el fondo quieto al bajar */
+            min-height: 100vh;
+        }
+
+        /* Título con sombra para resaltar sobre el fondo */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #070707;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .contenedor-principal {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Recuadro de formulario Lila Cálido con transparencia */
+        .formulario {
+            background: rgba(233, 213, 255, 0.9); 
+            backdrop-filter: blur(5px); /* Efecto de desenfoque de fondo */
+            padding: 25px;
+            border-radius: 15px;
+            width: 320px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .formulario h3 {
+            color: #4a2c6a;
+            margin-top: 0;
+            border-bottom: 2px solid #d1b3ff;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .formulario label {
+            display: block;
+            font-size: 0.85rem;
+            color: #5a3e7a;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .formulario input, .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #c0a0e0;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        #btn-agregar {
+            width: 100%;
+            padding: 12px;
+            background-color: #8b5cf6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        #btn-agregar:hover {
+            background-color: #7c3aed;
+            transform: translateY(-2px);
+        }
+
+        /* Lista de productos con transparencia */
+        #lista-productos {
+            flex-grow: 1;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .producto-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        img { 
+            width: 140px; 
+            height: 140px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .info-prod h2 { margin: 0; color: #4a2c6a; }
+        .info-prod .tipo { color: #8b5cf6; font-weight: bold; }
+        .info-prod .detalles { color: #555; font-style: italic; margin: 10px 0; font-size: 0.95rem; }
+        .info-prod .precio { font-size: 1.2rem; font-weight: bold; color: #2d1a42; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Arreglos Florales</h1>
+    
+    <div class="contenedor-principal">
+        <div class="formulario">
+            <h3>Nuevo Arreglo</h3>
+            
+            <label>Nombre del Arreglo:</label>
+            <input type="text" id="inputNombre" placeholder="Ej: Corazón de Rosas">
+            
+            <label>Precio ($):</label>
+            <input type="number" id="inputPrecio" placeholder="0.00">
+            
+            <label>Tipo:</label>
+            <input type="text" id="inputDesc" placeholder="Natural / Artificial">
+            
+            <label>¿Qué incluye el arreglo?</label>
+            <textarea id="inputContenido" placeholder="Ej: 10 Girasoles, follaje verde y base de madera"></textarea>
+            
+            <label>URL de Imagen:</label>
+            <input type="text" id="inputUrl" placeholder="Pega el link aquí">
+            
+            <button id="btn-agregar">Añadir al Catálogo</button>
+        </div>
+
+        <ul id="lista-productos">
+            <li class="producto-card">
+                <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=400" alt="Flores">
+                <div class="info-prod">
+                    <h2>Ramo Vibrante</h2>
+                    <p class="tipo">Natural</p>
+                    <p class="detalles"><strong>Contenido:</strong> Rosas rosadas, astromelias y follaje de eucalipto.</p>
+                    <p class="precio">$45.00</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
