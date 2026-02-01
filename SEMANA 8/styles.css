@@ -1,0 +1,45 @@
+/* Configuración de fuentes */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fffafb; /* Fondo sutilmente rosado */
+}
+
+.brand-font {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Color personalizado solicitado por la tarea */
+.color-rosa {
+    color: #d87d8d;
+}
+
+.btn-rosa {
+    background-color: #d87d8d;
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-rosa:hover {
+    background-color: #e096da;
+    color: white;
+}
+
+/* Personalización de la Tabla */
+.custom-table-header {
+    background-color: #ec9fdc !important;
+}
+
+/* Carrusel Overlay */
+.bg-dark-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
